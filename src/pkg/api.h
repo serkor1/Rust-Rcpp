@@ -8,6 +8,7 @@
 struct F64Slice {
   const double *data;
   uintptr_t len;
+  uintptr_t idx;
 };
 
 extern "C" {
