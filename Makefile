@@ -17,3 +17,7 @@ test-pkg: ## Test the exported functions
 
 test-rust: ## Test the Rust implementation
 	cd src/pkg && cargo test
+
+purge: ## Delete all non-tracked files
+	git clean -d -x -f 
+	cd src/pkg && cargo clean
