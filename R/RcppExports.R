@@ -7,6 +7,11 @@ rcpp_sum <- function(x) {
 }
 
 #' @export
+rcpp_sum_slice <- function(x) {
+    .Call(`_RustPkg_rcpp_sum_slice`, x)
+}
+
+#' @export
 rcpp_add <- function(x, y) {
     .Call(`_RustPkg_rcpp_add`, x, y)
 }

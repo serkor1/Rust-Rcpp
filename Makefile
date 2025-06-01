@@ -13,5 +13,4 @@ build-pkg: ## Builds R package with {Rcpp} and {pak}
 	Rscript -e "pak::pak()"
 
 test-pkg: ## Test the exported functions
-	R CMD build . > /dev/null 2>&1
 	Rscript -e "testthat::test_local()"

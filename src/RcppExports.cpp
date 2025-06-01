@@ -21,6 +21,17 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// rcpp_sum_slice
+double rcpp_sum_slice(const std::vector<double>& x);
+RcppExport SEXP _RustPkg_rcpp_sum_slice(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const std::vector<double>& >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_sum_slice(x));
+    return rcpp_result_gen;
+END_RCPP
+}
 // rcpp_add
 double rcpp_add(double x, double y);
 RcppExport SEXP _RustPkg_rcpp_add(SEXP xSEXP, SEXP ySEXP) {
@@ -36,6 +47,7 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_RustPkg_rcpp_sum", (DL_FUNC) &_RustPkg_rcpp_sum, 1},
+    {"_RustPkg_rcpp_sum_slice", (DL_FUNC) &_RustPkg_rcpp_sum_slice, 1},
     {"_RustPkg_rcpp_add", (DL_FUNC) &_RustPkg_rcpp_add, 2},
     {NULL, NULL, 0}
 };

@@ -9,6 +9,15 @@ double rcpp_sum(const std::vector<double>& x) {
 
 //' @export
 // [[Rcpp::export]]
+double rcpp_sum_slice(const std::vector<double>& x) {
+    F64Slice slice;
+    slice.data = x.data();
+    slice.len  = x.size();
+    return sum_slice(&slice);
+}
+
+//' @export
+// [[Rcpp::export]]
 double rcpp_add(double x, double y) {
     return add(x, y);
 }
