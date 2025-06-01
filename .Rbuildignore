@@ -1,3 +1,5 @@
 ^Rust-Rcpp\.Rproj$
 ^\.Rproj\.user$
 ^\.github$
+Makefile
+LICENSE
