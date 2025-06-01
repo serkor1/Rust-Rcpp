@@ -1,6 +1,6 @@
- <!-- badges: start -->
-  [![R-CMD-check](https://github.com/serkor1/Rust-Rcpp/actions/workflows/R-CMD-check.yaml/badge.svghttps://github.com/serkor1/Rust-Rcpp/actions/workflows/R-CMD-check.yaml/badge.svghttps://github.com/serkor1/Rust-Rcpp/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/serkor1/Rust-Rcpp/actions/workflows/R-CMD-check.yaml)
-  <!-- badges: end -->
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/serkor1/Rust-Rcpp/actions/workflows/R-CMD-check.yaml/badge.svghttps://github.com/serkor1/Rust-Rcpp/actions/workflows/R-CMD-check.yaml/badge.svghttps://github.com/serkor1/Rust-Rcpp/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/serkor1/Rust-Rcpp/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
 
 # Using Rust in R via [{Rcpp}](https://github.com/RcppCore/Rcpp/tree/master)
 
@@ -47,3 +47,6 @@ make help
 
 Is a good start.
 
+## :books: Resources
+
+* On [configure](https://yutani.rbind.io/post/2021-09-21-writing-a-configure-script-for-an-r-package-using-rust/?utm_source=chatgpt.com) scripts. 
