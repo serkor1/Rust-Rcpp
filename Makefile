@@ -14,3 +14,6 @@ build-pkg: ## Builds R package with {Rcpp} and {pak}
 
 test-pkg: ## Test the exported functions
 	Rscript -e "testthat::test_local()"
+
+test-rust: ## Test the Rust implementation
+	cd src/pkg && cargo test

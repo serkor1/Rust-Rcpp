@@ -50,3 +50,27 @@ pub extern "C" fn sum(data: *const f64, len: usize) -> f64 {
     slice.iter().sum()
 }
 
+
+#[cfg(test)]
+mod unit_tests {
+    use super::*;
+    static VECTOR: [f64; 2] = [1.3, 2.4]; // Sums to 3.7 incase you wanted to know ¯\_(ツ)_/¯
+
+    #[test]
+    fn is_sum_correct() {
+        // This test is mostly conducted
+        // as a guide on how to use the struct
+        // on the rust side.
+        let ptr: *const f64 = VECTOR.as_ptr();
+        let len: usize = VECTOR.len();
+
+        let raw = RawSlice::new(ptr, len);
+        let with_struct: f64 = unsafe { sum_slice(&raw as *const RawSlice<f64>) };
+        let without_struct: f64 = unsafe { sum(ptr, len) };
+
+        assert_eq!(with_struct, without_struct);
+        assert_eq!(3.7, with_struct);
+    }
+
+
+}
