@@ -5,16 +5,17 @@
 #include <new>
 
 /// C/C++ compatible f64 vectors
-struct F64Slice {
-  const double *data;
+template<typename T>
+struct RawSlice {
+  const T *data;
   uintptr_t len;
   uintptr_t idx;
 };
 
 extern "C" {
 
-/// With F64Slice implementations
-double sum_slice(const F64Slice *slice);
+/// With RawSlice implementations
+double sum_slice(const RawSlice<double> *slice);
 
 /// add two values
 double add(double left, double right);

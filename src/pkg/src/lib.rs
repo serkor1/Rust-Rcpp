@@ -1,24 +1,24 @@
 /// C/C++ compatible f64 vectors
 #[repr(C)]
-pub struct F64Slice {
-    pub data: *const f64,
+pub struct RawSlice<T> {
+    pub data: *const T,
     pub len:  usize,
     pub idx: usize
 }
 
-impl F64Slice {
+impl<T: Copy> RawSlice<T> {
 
-    pub fn new(data: *const f64, len: usize) -> Self {
-        F64Slice { data, len, idx: 0 }
+    pub fn new(data: *const T, len: usize) -> Self {
+        RawSlice { data, len, idx: 0 }
     }
 
-    pub fn as_slice(&self) -> &[f64] {
+    pub fn as_slice(&self) -> &[T] {
         unsafe { std::slice::from_raw_parts(self.data, self.len) }
     }
 }
 
-impl Iterator for F64Slice {
-    type Item = f64;
+impl<T: Copy> Iterator for RawSlice<T> {
+    type Item = T;
 
     fn next(&mut self) -> Option<Self::Item> {
         if self.idx >= self.len {
@@ -31,9 +31,9 @@ impl Iterator for F64Slice {
     }
 }
 
-/// With F64Slice implementations
+/// With RawSlice implementations
 #[unsafe(no_mangle)]
-pub extern "C" fn sum_slice(slice: *const F64Slice) -> f64 {
+pub extern "C" fn sum_slice(slice: *const RawSlice<f64>) -> f64 {
     let slice_ref = unsafe { &*slice };
     slice_ref.as_slice().iter().sum()
 }
