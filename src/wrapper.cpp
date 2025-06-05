@@ -3,21 +3,27 @@
 
 //' @export
 // [[Rcpp::export]]
-double rcpp_sum(const std::vector<double>& x) {
-    return sum(x.data(), static_cast<uint64_t>(x.size()));
+double reference_sum(const Rcpp::NumericVector& x) {
+
+    const double* data = x.begin();
+    int n = x.size();
+
+    double sum = 0.0;
+    const double* end = data + n;
+    for (const double* ptr = data; ptr < end; ++ptr) {
+        sum += *ptr;
+    }
+
+    return sum;
 }
 
 //' @export
 // [[Rcpp::export]]
-double rcpp_sum_slice(const std::vector<double>& x) {
-    RawSlice<double> slice;
-    slice.data = x.data();
+double ffi_sum(const Rcpp::NumericVector& x) {
+    vector<double> slice;
+    slice.data = x.begin();
     slice.len  = x.size();
-    return sum_slice(&slice);
+    slice.idx  = 0;
+    return sum(&slice);
 }
 
-//' @export
-// [[Rcpp::export]]
-double rcpp_add(double x, double y) {
-    return add(x, y);
-}

@@ -2,17 +2,12 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 #' @export
-rcpp_sum <- function(x) {
-    .Call(`_RustPkg_rcpp_sum`, x)
+reference_sum <- function(x) {
+    .Call(`_RustPkg_reference_sum`, x)
 }
 
 #' @export
-rcpp_sum_slice <- function(x) {
-    .Call(`_RustPkg_rcpp_sum_slice`, x)
-}
-
-#' @export
-rcpp_add <- function(x, y) {
-    .Call(`_RustPkg_rcpp_add`, x, y)
+ffi_sum <- function(x) {
+    .Call(`_RustPkg_ffi_sum`, x)
 }
 
