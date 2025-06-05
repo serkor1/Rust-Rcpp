@@ -1,6 +1,8 @@
 #include <Rcpp.h>
 #include "pkg/api.h"
 
+//' @title Rcpp Sum
+//' @param x a vector
 //' @export
 // [[Rcpp::export]]
 double reference_sum(const Rcpp::NumericVector& x) {
@@ -17,6 +19,8 @@ double reference_sum(const Rcpp::NumericVector& x) {
     return sum;
 }
 
+//' @title Rust Sum
+//' @param x a vector
 //' @export
 // [[Rcpp::export]]
 double ffi_sum(const Rcpp::NumericVector& x) {
