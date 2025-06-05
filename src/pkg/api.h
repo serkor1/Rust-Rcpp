@@ -4,9 +4,17 @@
 #include <ostream>
 #include <new>
 
+/// Struct: Vector<T>
+///
+/// ## Description
+///
+///
 /// C/C++ compatible f64 vectors
+///
+/// NOTE: if bindgen is C++ this is a struct template
+/// otherwise its a typedef (For some reason it becomes vector_f64 if exported like this)
 template<typename T>
-struct RawSlice {
+struct vector {
   const T *data;
   uintptr_t len;
   uintptr_t idx;
@@ -14,12 +22,6 @@ struct RawSlice {
 
 extern "C" {
 
-/// With RawSlice implementations
-double sum_slice(const RawSlice<double> *slice);
-
-/// add two values
-double add(double left, double right);
-
-double sum(const double *data, uintptr_t len);
+double sum(const vector<double> *vector);
 
 }  // extern "C"
