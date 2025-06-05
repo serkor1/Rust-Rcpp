@@ -51,3 +51,6 @@ rsconnect/
 
 # Rust artifacts
 src/pkg/target
+
+# configure
+autom4te.cache
