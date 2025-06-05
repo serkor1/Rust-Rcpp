@@ -3,19 +3,13 @@ testthat::test_that(
 
     ## test the sum function
     testthat::expect_equal(
-      object   = rcpp_sum(c(1.2, 1.3, 2.0)),
+      object   = ffi_sum(c(1.2, 1.3, 2.0)),
       expected = sum(c(1.2, 1.3, 2.0))
     )
 
-    ## test the add function
+    ## test the reference sum function
     testthat::expect_equal(
-      object   = rcpp_add(1.2, 1.3),
-      expected = sum(c(1.2, 1.3))
-    )
-
-    ## test the slicer
-    testthat::expect_equal(
-      object   = rcpp_sum_slice(c(1.2, 1.3)),
+      object   = reference_sum(1.2, 1.3),
       expected = sum(c(1.2, 1.3))
     )
     
