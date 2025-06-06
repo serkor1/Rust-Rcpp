@@ -1,6 +1,4 @@
-<!-- badges: start -->
-[![R-CMD-check](https://github.com/serkor1/Rust-Rcpp/actions/workflows/R-CMD-check.yaml/badge.svghttps://github.com/serkor1/Rust-Rcpp/actions/workflows/R-CMD-check.yaml/badge.svghttps://github.com/serkor1/Rust-Rcpp/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/serkor1/Rust-Rcpp/actions/workflows/R-CMD-check.yaml)
-<!-- badges: end -->
+[![R-CMD-check](https://github.com/serkor1/Rust-Rcpp/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/serkor1/Rust-Rcpp/actions/workflows/R-CMD-check.yaml)
 
 # Using Rust in R via [{Rcpp}](https://github.com/RcppCore/Rcpp/tree/master)
 
